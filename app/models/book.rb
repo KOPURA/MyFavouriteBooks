@@ -16,6 +16,8 @@ class Book < ApplicationRecord
   validates :publish_date, presence: true
   validates :isbn, isbn: true
 
+  before_save :titleize_record
+
   def to_hash
     {
       'Book Title' => title,
@@ -24,5 +26,11 @@ class Book < ApplicationRecord
       'Publish Date' => publish_date,
       'Description' => description
     }
+  end
+
+  private
+
+  def titleize_record
+    self.title = title.strip.split(/\W+/).map { |w| w.capitalize }.reject(&:empty?).join(' ')
   end
 end
