@@ -12,7 +12,9 @@ class Book < ApplicationRecord
   ]
 
   validates :title, presence: true
-  validates :genre, presence: true
+  validates :genre, presence: true, inclusion: ALL_GENRES
+  validates :publish_date, presence: true
+  validates :isbn, isbn: true
 
   def to_hash
     {
