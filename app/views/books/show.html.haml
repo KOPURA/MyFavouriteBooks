@@ -1,0 +1,11 @@
+%h2= @book["Book Title"]
+%div#bookInfo
+  %table
+    - @book.to_hash.each do |key, value|
+      %tr
+        %td #{key}:
+        %td #{value}
+%div.buttonsToolbar
+  = link_to 'Edit Book', edit_book_path(@book)
+  = link_to 'Delete Book', book_path(@book), :method => :delete
+  = link_to 'All Books', books_path

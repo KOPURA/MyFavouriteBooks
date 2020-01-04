@@ -2,10 +2,15 @@
 %html
   %head
     %title My Favourite Books
-    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = csrf_meta_tags
 
   %body
+    -if flash[:notice]
+      #notice.message= flash[:notice]
+    -elsif flash[:warning]
+      #warning.message= flash[:warning]
     #main
       = yield

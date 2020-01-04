@@ -1,0 +1,5 @@
+%h2 Edit "#{@book.title}"
+
+= form_tag book_path(@book), :method => :put do
+  = render :partial => 'book_form'
+  = submit_tag 'Save'
