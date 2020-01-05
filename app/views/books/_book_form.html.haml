@@ -1,3 +1,10 @@
+- unless @book.errors.empty?
+  #warning
+    Failed to #{controller.action_name} book:
+    %ul
+      - @book.errors.full_messages.each do |error|
+        %li= error
+
 = label :book, :title, 'Title:'
 = text_field :book, :title
 %br

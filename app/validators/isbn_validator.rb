@@ -1,8 +1,8 @@
 class IsbnValidator < ActiveModel::EachValidator
 
   def validate_each(record, attribute, value)
-    validate_presence record, attribute, value
-    validate_format record, attribute, value
+    validate_presence record, value
+    validate_format record, value
   end
 
   private
@@ -13,14 +13,14 @@ class IsbnValidator < ActiveModel::EachValidator
     record.publish_date && record.publish_date > @@isbn_initial_date
   end
 
-  def validate_presence record, attribute, value
+  def validate_presence record, value
     if !value.present? && should_have_isbn?(record)
-      record.errors[attribute] << "ISBN number is required for books, published after #{@@isbn_initial_date}"
+      record.errors[:base] << "ISBN number is required for books published after #{@@isbn_initial_date}"
     end
   end
 
-  def validate_format record, attribute, value
-    record.errors[attribute] << "#{value} is not a number." if value !~ /^[\d]+$/
-    record.errors[attribute] << "ISBN should have 10 or 13 digits." if ![10, 13].include? value.length
+  def validate_format record, value
+    record.errors[:base] << "ISBN '#{value}'' is not a number." if value.present? && value !~ /^[\d]+$/
+    record.errors[:base] << "ISBN should have 10 or 13 digits." if ![10, 13].include? value.length
   end
 end
