@@ -30,7 +30,7 @@ class Book < ApplicationRecord
 
   private
 
-  def titleize_record
-    self.title = title.strip.split(/\W+/).map { |w| w.capitalize }.reject(&:empty?).join(' ')
-  end
+    def titleize_record
+      self.title = title.strip.split(/\W+/).map { |w| w.capitalize }.reject(&:empty?).join(' ')
+    end
 end

@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+table#books th.sortedBy {
+    background-color: lightgrey;
+}
+
+form#genres  { display: table;      }
+form#genres p     { display: table-row;  }
+form#genres label { display: table-cell; }
+form#genres input { display: table-cell; }

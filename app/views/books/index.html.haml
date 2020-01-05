@@ -1,12 +1,21 @@
 %h1 My Favourite Books
 
+=form_tag books_path, method: :get, id: 'genres' do
+  - Book::ALL_GENRES.each_with_index do |genre, idx|
+    %p
+      = check_box_tag "#{genre}", true, @selected_genres.include?(genre)
+      = genre
+  = submit_tag 'Filter'
+  = link_to 'Reset', reset_path, method: :delete
+
+%br
 %table#books
   %thead
     %tr
-      %th Book Title
+      %th{class: @title_class}= link_to 'Book Title', books_path(sort_by: 'title')
       %th Genre
       %th ISBN Number
-      %th Publish Date
+      %th{class: @publish_date_class}= link_to 'Publish Date', books_path(sort_by: 'publish_date')
       %th More Info
   %tbody
     - @books.each do |book|
