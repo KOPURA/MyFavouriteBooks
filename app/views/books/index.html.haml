@@ -9,17 +9,7 @@
   = link_to 'Reset', reset_path, method: :delete
 
 %br
-%table#books
-  %thead
-    %tr
-      %th{class: @title_class}= link_to 'Book Title', books_path(sort_by: 'title')
-      %th Genre
-      %th ISBN Number
-      %th{class: @publish_date_class}= link_to 'Publish Date', books_path(sort_by: 'publish_date')
-      %th More Info
-  %tbody
-    - @books.each do |book|
-      = render :partial => 'book_row', :locals => { book: book }
+= render 'books_table', sortable: true
 
 %div.buttonsToolbar
   = link_to 'Add new book', new_book_path

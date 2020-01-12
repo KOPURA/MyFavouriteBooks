@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-table#books th.sortedBy {
+table.books th.sortedBy {
     background-color: lightgrey;
 }
 

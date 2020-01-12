@@ -10,7 +10,7 @@
   %body
     -if flash[:notice]
       #notice.message= flash[:notice]
-    -elsif flash[:warning]
-      #warning.message= flash[:warning]
+    -elsif flash[:alert]
+      #warning.message= flash[:alert]
     #main
       = yield

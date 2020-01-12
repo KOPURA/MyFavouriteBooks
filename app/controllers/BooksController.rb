@@ -59,10 +59,18 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
+  def same_author
+    @book = Book.find(params[:id])
+    if !@book.author.present?
+      return redirect_to books_path, :alert => "'To Kill A Mockingbird' has no author info"
+    end
+    @books = Book.where(author: @book.author)
+  end
+
   private
 
     def permitted
-      [ :title, :genre, :isbn, :publish_date, :description ]
+      [ :title, :genre, :author, :isbn, :publish_date, :description ]
     end
 
     def get_sorting
