@@ -1,6 +1,6 @@
 %h2 Create New Book
 
-= form_tag books_path, :method => :post do
+= form_tag books_path, method: :post, class: 'book_form' do
   = render :partial => 'book_form'
-  = submit_tag 'Create'
-  = link_to 'Cancel', books_path
+  = submit_tag 'Create', class: 'button_like'
+  = link_to 'Cancel', books_path, class: 'button_like'

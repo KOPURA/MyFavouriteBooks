@@ -4,22 +4,21 @@
     %ul
       - @book.errors.full_messages.each do |error|
         %li= error
-
-= label :book, :title, 'Title:'
-= text_field :book, :title
-%br
-= label :book, :genre, 'Genre:'
-= select :book, :genre, Book::ALL_GENRES 
-%br
-= label :book, :author, 'Author:'
-= text_field :book, :author
-%br
-= label :book, :isbn, 'ISBN Number:'
-= text_field :book, :isbn
-%br
-= label :book, :publish_date, 'Publish Date:'
-= date_select :book, :publish_date
-%br
-= label :book, :description, 'Description'
-= text_area :book, :description, size: "60x12"
-%br
+%div.form_row
+  = label :book, :title, 'Title:'
+  = text_field :book, :title
+%div.form_row
+  = label :book, :genre, 'Genre:'
+  = select :book, :genre, Book::ALL_GENRES 
+%div.form_row
+  = label :book, :author, 'Author:'
+  = text_field :book, :author
+%div.form_row
+  = label :book, :isbn, 'ISBN Number:'
+  = text_field :book, :isbn
+%div.form_row
+  = label :book, :publish_date, 'Publish Date:'
+  = date_select :book, :publish_date
+%div.form_row
+  = label :book, :description, 'Description'
+  = text_area :book, :description, size: "60x12"

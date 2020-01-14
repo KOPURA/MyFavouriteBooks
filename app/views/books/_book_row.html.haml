@@ -1,7 +1,7 @@
 %tr
-  %td= book.title 
-  %td= book.genre
-  %td= book.author
-  %td= book.isbn
-  %td= book.publish_date
-  %td= link_to "Details", book_path(book)
+  %td{"width" => "35%"}= book.title 
+  %td{"width" => "10%"}= book.genre
+  %td{"width" => "15%"}= book.author
+  %td{"width" => "10%"}= book.isbn
+  %td{"class" => "central_align", "width" => "20%"}= book.publish_date
+  %td{"class" => "central_align", "width" => "10%"}= link_to "More Info", book_path(book)

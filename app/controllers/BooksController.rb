@@ -62,7 +62,7 @@ class BooksController < ApplicationController
   def same_author
     @book = Book.find(params[:id])
     if !@book.author.present?
-      return redirect_to books_path, :alert => "'To Kill A Mockingbird' has no author info"
+      return redirect_to books_path, :alert => "'#{@book.title}' has no author info"
     end
     @books = Book.where(author: @book.author)
   end

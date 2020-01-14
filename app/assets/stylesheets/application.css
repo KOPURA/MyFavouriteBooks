@@ -13,11 +13,129 @@
  *= require_tree .
  *= require_self
  */
+ * {
+    margin: 0;
+    padding: 0;
+ }
+
+ body {
+    background-color: lightgray;
+ }
+.button_like {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 7px 12px 7px 12px;
+  border: 1px dashed black;
+  border-radius: 4px;
+}
+
+#main {
+    margin: auto;
+    padding: 10px 20px;
+    width: 80%;
+    height: 100vh;
+    background-color: white;
+}
+
+#notice {
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#warning {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+div.buttons_toolbar {
+    margin-top: 20px;
+}
+
+table.books {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 table.books th.sortedBy {
     background-color: lightgrey;
+}
+
+table.books thead th {
+    padding: 5px;
+    padding-bottom: 15px;
+    border-bottom: 5px solid black;
+}
+
+table.books td {
+    padding: 3px 10px;
+}
+
+table.books td.central_align {
+    text-align: center
 }
 
 form#genres  { display: table;      }
 form#genres p     { display: table-row;  }
 form#genres label { display: table-cell; }
+form#genres p#genres_toolbar {
+    display: block;
+    margin-top: 10px;
+}
 form#genres input { display: table-cell; }
+
+div#book_details_container {
+    width: 100%;
+    margin-top: 30px;
+}
+
+table.book_details td {
+    padding: 3px 0;
+}
+
+table.book_details td.key {
+    width: 15%;
+    padding-right: 100px;
+    vertical-align: top;
+}
+
+form.book_form {
+    display: table;
+    margin-top: 30px;
+}
+
+form.book_form div.form_row {
+    display: table-row;
+}
+
+form.book_form input, select, textarea, label {
+    display: table-cell;
+    margin-bottom: 10px;
+    vertical-align: top;
+}
+
+form.book_form input[type=text] {
+    width: 200px;
+    height: 18px;
+    border: 1px dashed black;
+    padding: 1px 1px 1px 5px;
+    border-radius: 4px;
+}
+
+form.book_form textarea {
+    border: 1px dashed black;
+    padding: 1px 1px 1px 5px;
+    border-radius: 4px;
+}
+
+form.book_form a, input[type='submit'] {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 5px;
+}

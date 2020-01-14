@@ -1,12 +1,12 @@
-%h2= @book["Book Title"]
-%div#bookInfo
-  %table
+%h2= "Details for '#{@book.title}'"
+%div#book_details_container
+  %table.book_details
     - @book.to_hash.each do |key, value|
       %tr
-        %td #{key}:
-        %td #{value}
-%div.buttonsToolbar
-  = link_to 'Find Books With Same Author', same_author_path(@book)
-  = link_to 'Edit Book', edit_book_path(@book)
-  = link_to 'Delete Book', book_path(@book), :method => :delete
-  = link_to 'All Books', books_path
+        %td.key #{key}:
+        %td.value #{value}
+%div.buttons_toolbar
+  = link_to 'Find Books With Same Author', same_author_path(@book), class: 'button_like'
+  = link_to 'Edit Book', edit_book_path(@book), class: 'button_like'
+  = link_to 'Delete Book', book_path(@book), :method => :delete, class: 'button_like'
+  = link_to 'All Books', books_path, class: 'button_like'

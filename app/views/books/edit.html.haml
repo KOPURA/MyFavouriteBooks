@@ -1,6 +1,6 @@
 %h2 Edit "#{@book.title}"
 
-= form_tag book_path(@book), :method => :put do
+= form_tag book_path(@book), method: :put, class: 'book_form'  do
   = render :partial => 'book_form'
-  = submit_tag 'Update Book Info'
-  = link_to 'Cancel', book_path(@book)
+  = submit_tag 'Update Book Info', class: 'button_like'
+  = link_to 'Cancel', book_path(@book), class: 'button_like'

@@ -4,15 +4,15 @@
       - if sortable
         %th{class: @title_class}= link_to 'Book Title', books_path(sort_by: 'title')
       - else
-        %th 'Book Title'
+        %th Book Title
       %th Genre
       %th Author
       %th ISBN Number
       - if sortable
         %th{class: @publish_date_class}= link_to 'Publish Date', books_path(sort_by: 'publish_date')
       - else
-        %th 'Publish Date'
-      %th More Info
+        %th Publish Date
+      %th
   %tbody
     - @books.each do |book|
-      = render :partial => 'book_row', :locals => { book: book }
+      = render 'book_row',  book: book

@@ -1,4 +1,5 @@
+%h2= "Books from #{@book.author}"
 = render 'books_table', sortable: false
 %br
-= back_to_book_link @book
-= link_to 'All Books', books_path
+= back_to_book_link @book, class: 'button_like'
+= link_to 'All Books', books_path, class: 'button_like'

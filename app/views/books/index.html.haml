@@ -1,15 +1,16 @@
 %h1 My Favourite Books
-
+%br
 =form_tag books_path, method: :get, id: 'genres' do
   - Book::ALL_GENRES.each_with_index do |genre, idx|
     %p
       = check_box_tag "#{genre}", true, @selected_genres.include?(genre)
       = genre
-  = submit_tag 'Filter'
-  = link_to 'Reset', reset_path, method: :delete
+  %p#genres_toolbar
+    = submit_tag 'Filter', class: 'button_like'
+    = link_to 'Reset', reset_path, class: 'button_like', method: :delete
 
 %br
 = render 'books_table', sortable: true
 
-%div.buttonsToolbar
-  = link_to 'Add new book', new_book_path
+%div.buttons_toolbar
+  = link_to 'Add new book', new_book_path, class: 'button_like'
