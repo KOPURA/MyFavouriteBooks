@@ -2,5 +2,5 @@
 
 = form_tag book_path(@book), :method => :put do
   = render :partial => 'book_form'
-  = submit_tag 'Save'
+  = submit_tag 'Update Book Info'
   = link_to 'Cancel', book_path(@book)

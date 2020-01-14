@@ -39,7 +39,7 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
-    if @book.update_attributes(params.require(:book).permit(*permitted))
+    if @book.update(params.require(:book).permit(*permitted))
       redirect_to books_path, :notice => "Book '#{@book.title}' was successfully updated!"
     else
       render 'edit'

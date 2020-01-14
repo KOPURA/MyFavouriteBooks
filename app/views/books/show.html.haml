@@ -6,7 +6,7 @@
         %td #{key}:
         %td #{value}
 %div.buttonsToolbar
-  = link_to 'Books With Same Author', same_author_path(@book)
+  = link_to 'Find Books With Same Author', same_author_path(@book)
   = link_to 'Edit Book', edit_book_path(@book)
   = link_to 'Delete Book', book_path(@book), :method => :delete
   = link_to 'All Books', books_path

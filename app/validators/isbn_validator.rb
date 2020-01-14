@@ -2,7 +2,7 @@ class IsbnValidator < ActiveModel::EachValidator
 
   def validate_each(record, attribute, value)
     validate_presence record, value
-    validate_format record, value
+    validate_format record, value if should_have_isbn?(record)
   end
 
   private
